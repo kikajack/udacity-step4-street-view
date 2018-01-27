@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>udacity-step4-street-view</title>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVpr2_kq13MUo0ZqpEPFV18gd037Q4SdE&callback=initMap" async defer></script> -->
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script type="text/javascript">  
+      var map;
+      function initialize() {
+        console.log('init')
+        map = new BMap.Map('map');
+        map.centerAndZoom(new BMap.Point(121.491, 31.233), 11);  
+      }  
+         
+      function loadScript() {  
+        var script = document.createElement("script");  
+        script.src = "http://api.map.baidu.com/api?v=2.0&ak=TFbEYEuNSR9F9Z1SrBI3qCdTUXs0nllz&callback=initialize";
+        document.body.appendChild(script);  
+      }  
+         
+      window.onload = loadScript;  
+    </script>
+<script>
+console.log(navigator.userAgent)
+(!/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent))
+    ? document.getElementById('select').style.width = '100px'
+    : ''
+</script>
+    <!--
+<script type="text/javascript">
+var initMap = function () {
+  // TODO: use a constructor to create a new map JS object. You can use the coordinates
+  // we used, 40.7413549, -73.99802439999996 or your own!
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 22.522007, lng: 113.935075},
+    zoom: 13
+  })
+  var loc = {lat: 22.522007, lng: 113.935075};
+  var marker = new google.maps.Marker({
+    position: loc,
+    map: map,
+    title: 'haha'
+  })
+  var infowindow = new google.maps.InfoWindow({
+    content: "this is the info window of google maps,haha",
+    disableAutoPan: false
+  })
+  marker.addListener('click', function () {
+    infowindow.open(map, marker)
+  })
+}
+</script>
+-->
+  </body>
+</html>
